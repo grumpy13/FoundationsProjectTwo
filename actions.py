@@ -63,7 +63,7 @@ def pick_products(cart, picked_store):
 
         for p in picked_store.products:
 
-            if choice == p.name:
+            if choice.lower() == p.name.lower():
                 cart.add_to_cart(p)
                 
         choice = input()

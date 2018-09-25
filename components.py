@@ -85,11 +85,19 @@ class Cart():
         print ()
         self.print_receipt()
 
+        exit = False
+
         choice = input("To confirm your purchase please type yes or no to cancel: \n")
 
-        if choice == "yes":
-            print ("Your order has been placed!")
-        elif choice == "no":
-            print ("Your order has been cancelled!")
-        else:
-            print ("Invalid input!")
+        while exit != True:
+
+            if choice.lower() == "yes":
+                print ("Your order has been placed!")
+                exit = True
+            elif choice.lower() == "no":
+                print ("Your order has been cancelled!")
+                exit = True
+            else:
+                print ("Invalid input please try again: ")
+                choice = input()
+
